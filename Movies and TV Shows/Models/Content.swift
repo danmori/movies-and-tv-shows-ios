@@ -23,6 +23,23 @@ extension Content {
     }
     
     static var allContent: [Content] {
-        return []
+        let actionCategory = Category(name: "Action", iconName: "")
+        return [Content(featuredImageName: "movie.batman.featured", name: "Batman", shortDescription: "", category: actionCategory),
+                Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory),
+                Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory),
+                Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory),
+                Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory),
+                Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory),
+                Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory),
+                Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory),
+                Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory),
+                Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory),
+                Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory),
+                Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory),
+                Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory),
+                Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory),
+                Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory),Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory),
+                Content(featuredImageName: "movie.theflash.featured", name: "The Flash", shortDescription: "", category: actionCategory)
+        ]
     }
 }

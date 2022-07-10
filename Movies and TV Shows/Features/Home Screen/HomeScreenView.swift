@@ -81,13 +81,11 @@ class HomeScreenView: UIView {
         allContentLabel.text = "All Content"
         allContentLabel.font = UIFont.systemFont(ofSize: 24, weight: .bold)
         
+        allContentTableView.register(ContentTableViewCell.self, forCellReuseIdentifier: "ContentTableViewCell")
+        allContentTableView.showsHorizontalScrollIndicator = false
         allContentTableView.showsVerticalScrollIndicator = false
-        allContentTableView.backgroundColor = .blue
-        
-//        featuredCollectionView.register(FeaturedImageAndTitleCollectionViewCell.self, forCellWithReuseIdentifier: "FeaturedImageAndTitleCollectionViewCell")
-//        featuredCollectionView.showsHorizontalScrollIndicator = false
-//        featuredCollectionView.showsVerticalScrollIndicator = false
-//        featuredCollectionView.heightAnchor.constraint(equalToConstant: 150).isActive = true
+        allContentTableView.rowHeight = 40.0
+        allContentTableView.heightAnchor.constraint(equalToConstant: 400).isActive = true
     }
     
     private func setupStacks() {

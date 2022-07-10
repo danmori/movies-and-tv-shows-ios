@@ -9,11 +9,7 @@ import UIKit
 
 class FeaturedImageAndTitleCollectionViewCell: UICollectionViewCell {
     
-    lazy var featuredImageView: UIImageView = UIImageView(frame: .zero) {
-        didSet {
-            layoutIfNeeded()
-        }
-    }
+    lazy var featuredImageView: UIImageView = UIImageView(frame: .zero)
     
     override init(frame: CGRect) {
         super.init(frame: frame)

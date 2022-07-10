@@ -18,6 +18,7 @@ class HomeScreenViewModel: NSObject {
     
     var categories = Bindable<[Category]>()
     var featuredContent = Bindable<[Content]>()
+    var allContent = Bindable<[Content]>()
     
     func getCategories() {
         service.getCategories {
@@ -31,14 +32,11 @@ class HomeScreenViewModel: NSObject {
         }
     }
     
-    func numberOfItems(forCollectionView collectionView: UICollectionView, andView view: HomeScreenView) -> Int {
-        if collectionView == view.categoriesCollectionView {
-            return categories.value?.count ?? 0
-        } else if collectionView == view.featuredCollectionView {
-            return featuredContent.value?.count ?? 0
+    
+    func getAllContent() {
+        service.getAllContent {
+            self.allContent.value = $0
         }
-            
-        return 0
     }
     
 }

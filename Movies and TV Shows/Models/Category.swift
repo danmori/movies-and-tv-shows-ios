@@ -20,6 +20,7 @@ extension Category: Equatable {
     
     static var sampleData: [Category] {
         return [
+            Category(name: "All", iconName: ""),
             Category(name: "Action", iconName: ""),
             Category(name: "Comedy", iconName: ""),
             Category(name: "Romance", iconName: ""),
