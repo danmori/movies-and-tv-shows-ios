@@ -12,7 +12,12 @@ struct Category {
     let iconName: String
 }
 
-extension Category {
+extension Category: Equatable {
+    
+    static func ==(lhs: Category, rhs: Category) -> Bool {
+        return lhs.name == rhs.name
+    }
+    
     static var sampleData: [Category] {
         return [
             Category(name: "Action", iconName: ""),

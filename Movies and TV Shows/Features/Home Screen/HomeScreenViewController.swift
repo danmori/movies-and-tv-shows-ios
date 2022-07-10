@@ -12,33 +12,63 @@ class HomeScreenViewController: UIViewController {
     lazy var contentView = HomeScreenView()
     let service = ServiceAPI()
     lazy var viewModel = HomeScreenViewModel(service: service)
-
+    private var categoriesDataSource : GenericCollectionViewDataSource<LeftIconAndTitleCollectionViewCell, Category>!
+    private var featuredContentDataSource: GenericCollectionViewDataSource<FeaturedImageAndTitleCollectionViewCell, Content>!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupDataSourcesAndDelegates()
+        setupDelegates()
+        updateDataSources()
         setupBinders()
         loadCategories()
+        loadFeatured()
     }
     
     override func loadView() {
         self.view = contentView
     }
     
-    private func setupDataSourcesAndDelegates() {
-        contentView.categoriesCollectionView.dataSource = self
-        contentView.categoriesCollectionView.delegate = self
+    private func setupDelegates() {
+        self.contentView.categoriesCollectionView.delegate = self
+        self.contentView.featuredCollectionView.delegate = self
+    }
+    
+    private func updateDataSources() {
+        categoriesDataSource = GenericCollectionViewDataSource(cellIdentifier: "CategoryCollectionViewCell", items: self.viewModel.categories.value ?? [Category](), configureCell: { cell, item in
+            cell.categoryName = item.name
+        })
+        
+        contentView.categoriesCollectionView.dataSource = categoriesDataSource
+        contentView.categoriesCollectionView.reloadData()
+        
+        featuredContentDataSource = GenericCollectionViewDataSource(cellIdentifier: "FeaturedImageAndTitleCollectionViewCell", items: viewModel.featuredContent.value ?? [Content](), configureCell: { cell, item in
+            print("image name: \(item.featuredImageName)")
+            cell.featuredImageView.image = UIImage(named: item.featuredImageName)
+        })
+        
+        contentView.featuredCollectionView.dataSource = featuredContentDataSource
+        contentView.featuredCollectionView.reloadData()
     }
     
     private func setupBinders() {
         viewModel.categories.bind { categories in
             DispatchQueue.main.async {
-                self.contentView.categoriesCollectionView.reloadData()
+                self.updateDataSources()
+            }
+        }
+        viewModel.featuredContent.bind { content in
+            DispatchQueue.main.async {
+                self.updateDataSources()
             }
         }
     }
     
     private func loadCategories() {
         viewModel.getCategories()
+    }
+    
+    private func loadFeatured() {
+        viewModel.getFeatured()
     }
 
     /*
@@ -53,27 +83,6 @@ class HomeScreenViewController: UIViewController {
 
 }
 
-extension HomeScreenViewController: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return viewModel.numberOfItems(forCollectionView: collectionView, andView: self.contentView)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        if collectionView == contentView.categoriesCollectionView {
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CategoryCollectionViewCell", for: indexPath) as? LeftIconAndTitleCollectionViewCell else { return UICollectionViewCell() }
-            cell.categoryName = viewModel.categories.value?[indexPath.item].name ?? ""
-            return cell
-        }
-        
-        return UICollectionViewCell()
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if collectionView == contentView.categoriesCollectionView {
-            let item = viewModel.categories.value?[indexPath.item].name ?? ""
-            return CGSize(width: item.size(withAttributes: nil).width + 25.0, height: 40)
-        }
-        return CGSize(width: 0, height: 0)
-    }
-    
+extension HomeScreenViewController: UICollectionViewDelegate {
+
 }

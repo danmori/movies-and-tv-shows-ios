@@ -20,11 +20,13 @@
 		F122930E2878E4B2003D8C63 /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F122930D2878E4B2003D8C63 /* HomeScreenViewController.swift */; };
 		F12293102878E4BD003D8C63 /* HomeScreenViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F122930F2878E4BD003D8C63 /* HomeScreenViewModel.swift */; };
 		F12293122878E4C9003D8C63 /* HomeScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12293112878E4C9003D8C63 /* HomeScreenView.swift */; };
-		F12293142878E4D2003D8C63 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12293132878E4D2003D8C63 /* Movie.swift */; };
-		F12293162878E4DD003D8C63 /* TVShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12293152878E4DD003D8C63 /* TVShow.swift */; };
 		F12293182878E611003D8C63 /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12293172878E611003D8C63 /* Category.swift */; };
 		F122931A2878E935003D8C63 /* ServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F12293192878E935003D8C63 /* ServiceAPI.swift */; };
 		F16DF66F2879E8A900A3DF73 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16DF66E2879E8A900A3DF73 /* PaddingLabel.swift */; };
+		F16DF6712879F40600A3DF73 /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16DF6702879F40600A3DF73 /* Content.swift */; };
+		F16DF6732879F86A00A3DF73 /* FeaturedImageAndTitleCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16DF6722879F86A00A3DF73 /* FeaturedImageAndTitleCollectionViewCell.swift */; };
+		F16DF675287A0D2F00A3DF73 /* CategoriesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16DF674287A0D2E00A3DF73 /* CategoriesDataSource.swift */; };
+		F16DF679287A6A9F00A3DF73 /* GenericTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F16DF678287A6A9F00A3DF73 /* GenericTableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,11 +64,13 @@
 		F122930D2878E4B2003D8C63 /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
 		F122930F2878E4BD003D8C63 /* HomeScreenViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewModel.swift; sourceTree = "<group>"; };
 		F12293112878E4C9003D8C63 /* HomeScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenView.swift; sourceTree = "<group>"; };
-		F12293132878E4D2003D8C63 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
-		F12293152878E4DD003D8C63 /* TVShow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVShow.swift; sourceTree = "<group>"; };
 		F12293172878E611003D8C63 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		F12293192878E935003D8C63 /* ServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceAPI.swift; sourceTree = "<group>"; };
 		F16DF66E2879E8A900A3DF73 /* PaddingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
+		F16DF6702879F40600A3DF73 /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		F16DF6722879F86A00A3DF73 /* FeaturedImageAndTitleCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedImageAndTitleCollectionViewCell.swift; sourceTree = "<group>"; };
+		F16DF674287A0D2E00A3DF73 /* CategoriesDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesDataSource.swift; sourceTree = "<group>"; };
+		F16DF678287A6A9F00A3DF73 /* GenericTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -98,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				F1100E5D2879C37000BBD96E /* LeftIconAndTitleCollectionViewCell.swift */,
+				F16DF6722879F86A00A3DF73 /* FeaturedImageAndTitleCollectionViewCell.swift */,
 			);
 			path = CollectionViewCell;
 			sourceTree = "<group>";
@@ -160,10 +165,11 @@
 			isa = PBXGroup;
 			children = (
 				F1100E5A2879B86800BBD96E /* Bindable.swift */,
-				F12293132878E4D2003D8C63 /* Movie.swift */,
-				F12293152878E4DD003D8C63 /* TVShow.swift */,
 				F12293172878E611003D8C63 /* Category.swift */,
 				F12293192878E935003D8C63 /* ServiceAPI.swift */,
+				F16DF6702879F40600A3DF73 /* Content.swift */,
+				F16DF674287A0D2E00A3DF73 /* CategoriesDataSource.swift */,
+				F16DF678287A6A9F00A3DF73 /* GenericTableViewDataSource.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -325,18 +331,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				F122931A2878E935003D8C63 /* ServiceAPI.swift in Sources */,
-				F12293142878E4D2003D8C63 /* Movie.swift in Sources */,
 				F12292DF2878D220003D8C63 /* ViewController.swift in Sources */,
-				F12293162878E4DD003D8C63 /* TVShow.swift in Sources */,
 				F1100E5B2879B86800BBD96E /* Bindable.swift in Sources */,
 				F122930E2878E4B2003D8C63 /* HomeScreenViewController.swift in Sources */,
 				F12292DB2878D220003D8C63 /* AppDelegate.swift in Sources */,
+				F16DF6732879F86A00A3DF73 /* FeaturedImageAndTitleCollectionViewCell.swift in Sources */,
+				F16DF675287A0D2F00A3DF73 /* CategoriesDataSource.swift in Sources */,
+				F16DF679287A6A9F00A3DF73 /* GenericTableViewDataSource.swift in Sources */,
 				F12293182878E611003D8C63 /* Category.swift in Sources */,
 				F12293122878E4C9003D8C63 /* HomeScreenView.swift in Sources */,
 				F12292DD2878D220003D8C63 /* SceneDelegate.swift in Sources */,
 				F16DF66F2879E8A900A3DF73 /* PaddingLabel.swift in Sources */,
 				F12293102878E4BD003D8C63 /* HomeScreenViewModel.swift in Sources */,
 				F1100E5E2879C37000BBD96E /* LeftIconAndTitleCollectionViewCell.swift in Sources */,
+				F16DF6712879F40600A3DF73 /* Content.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
